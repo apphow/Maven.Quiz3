@@ -8,6 +8,7 @@ import rocks.zipcode.io.quiz3.collections.LabStatus;
 /**
  * @author leon on 10/12/2018.
  */
+
 public class SetLabStatusOfUnforkedLab {
     @Test(expected = UnsupportedOperationException.class)
     public void testCompleted() {
@@ -46,3 +47,5 @@ public class SetLabStatusOfUnforkedLab {
         student.setLabStatus(labName, expected);
     }
 }
+
+

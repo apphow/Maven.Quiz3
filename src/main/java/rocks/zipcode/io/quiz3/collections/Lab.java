@@ -6,25 +6,25 @@ import com.sun.org.apache.xerces.internal.util.Status;
  * @author leon on 10/12/2018.
  */
 public class Lab {
-    private String name = "";
-    private Status status;
+    private String labName = "";
+    private Status labStatus;
 
 
     public Lab() {
-        this.name = "";
-        this.status = status;
+        this.labName = "";
+        this.labStatus = labStatus;
     }
 
     public Lab(String labName) {
-        this.name = name;
+        this.labName = labName;
     }
 
     public String getName() {
-        return this.name;
+        return this.labName;
     }
 
     public void setStatus(LabStatus labStatus) {
-        this.status = status;
+        //this.labStatus = status;
     }
 
     public LabStatus getStatus() {

@@ -13,20 +13,37 @@ public class ArrayUtility<SomeType> {
     }
 
     public SomeType findOddOccurringValue() {
+        SomeType evenOccuringValue = null;
+        for(SomeType each : this.array) {
+            if(getNumberOfOccurrences(each) %2 == 1) {
+                evenOccuringValue = each;
+            }
+        }
 
 
-        return null;
+        return evenOccuringValue;
     }
 
     public SomeType findEvenOccurringValue() {
-        return null;
+        SomeType evenOccuringValue = null;
+        for(SomeType each :this.array) {
+            if(getNumberOfOccurrences(each) % 2 == 0) {
+                evenOccuringValue = each;
+            }
+        }
+        return evenOccuringValue;
     }
 
     public Integer getNumberOfOccurrences(SomeType valueToEvaluate) {
-        return null;
+        int counter = 0;
+        for(SomeType each : this.array) {
+            if(each.equals(valueToEvaluate)) counter++;
+        }
+        return counter;
     }
 
     public SomeType[] filter(Function<SomeType, Boolean> predicate) {
+
         return null;
     }
 }
