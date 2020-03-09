@@ -7,11 +7,13 @@ import java.util.List;
  */
 public class Student {
 
+
     public Student() {
         this(null);
     }
 
     public Student(List<Lab> labs) {
+
     }
 
     public Lab getLab(String labName) {
