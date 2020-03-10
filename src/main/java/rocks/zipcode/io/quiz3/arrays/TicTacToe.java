@@ -1,81 +1,44 @@
 package rocks.zipcode.io.quiz3.arrays;
 
+import java.util.Arrays;
+
 /**
  * @author leon on 09/12/2018.
  */
 public class TicTacToe {
+    private String[][] board;
 
-    String [][] matrix;
-    boolean isWinner = false;
-    String winner = "";
-
-    public TicTacToe(String[][] board) {
-        this.matrix = board;
-    }
+    public TicTacToe(String[][] board) {this.board = board;}
 
     public TicTacToe() {
-
+        this.board = new String[0][0];
     }
 
     public String[] getRow(Integer value) {
-        String [] result = new String[matrix.length];
-        for(int i = 0; i < matrix.length; i++) {
-            result[i] = matrix[value][i];
-        }
-        return result;
+        System.out.println(Arrays.toString(board[value]));
+        return board[value];
     }
 
     public String[] getColumn(Integer value) {
-        String[] result = new String[matrix.length];
-
-        for(int i = 0; i < matrix.length; i++) {
-            result[i] = matrix[i][value];
-        }
-        return result;
+        return new String[] {board[0][value], board[1][value], board[2][value]};
     }
 
     public Boolean isRowHomogenous(Integer rowIndex) {
-        String rowOne = matrix[rowIndex][0];
-        String rowTwo = matrix[rowIndex][1];
-        String rowThree = matrix[rowIndex][2];
-
-       return rowOne.equals(rowTwo) && rowOne.equals(rowThree);
+        return (getRow(rowIndex)[0].equals(getRow(rowIndex)[1]) && getRow(rowIndex)[0].equals(getRow(rowIndex)[2]));
     }
-
     public Boolean isColumnHomogeneous(Integer columnIndex) {
-        String columnOne = matrix[0][columnIndex];
-        String columnTwo = matrix[1][columnIndex];
-        String columnThree = matrix[2][columnIndex];
-
-        return columnOne.equals(columnTwo) && columnOne.equals(columnThree);
+        return(getColumn(columnIndex)[0].equals(getColumn(columnIndex)[1]) && getColumn(columnIndex)[0].equals(getColumn(columnIndex)[2]));
     }
 
     public String getWinner() {
         for (int i = 0; i < 3; i++) {
-            checkChars(matrix[i][0], matrix[i][1], matrix[i][2]);
-            if(isWinner) {
-                return winner;
+            if (isColumnHomogeneous(i)) {
+                return getColumn(i)[0];
+            } else if(isRowHomogenous(i)) {
+                return getRow(i)[0];
             }
         }
-        for( int i = 0; i < 3; i++) {
-            checkChars(matrix[0][i], matrix[1][i], matrix[2][i]);
-        }
-        return winner;
+        return getBoard()[1][1];
     }
-
-    public void checkChars(String charOne, String charTwo, String charThree) {
-        if(charOne.equals("X")) {
-            isWinner = true;
-            winner = "X";
-        } else if (charOne.equals("0")) {
-    isWinner = true;
-    winner = "O";
-        } else {
-    winner = "";
-        }
-    }
-
-    public String[][] getBoard() {
-        return null;
-    }
+    public String[][] getBoard() {return this.board;}
 }

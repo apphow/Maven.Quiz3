@@ -28,6 +28,6 @@ public class Lab {
     }
 
     public LabStatus getStatus() {
-        return LabStatus.COMPLETED;
+        return LabStatus.PENDING;
     }
 }

@@ -9,6 +9,8 @@ import java.util.ArrayList;
  */
 public class WaveGenerator {
     public static String[] wave(String str) {
+
+
         ArrayList<String> temp = new ArrayList<>();
         str = str.toLowerCase();
 
@@ -21,5 +23,6 @@ public class WaveGenerator {
         String[] result = new String[temp.size()];
             temp.toArray(result);
         return result;
+
     }
 }

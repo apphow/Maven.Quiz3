@@ -40,7 +40,7 @@ public class Student {
     public void forkLab(Lab lab) {
         for(Lab each : labs) {
             if(each == lab) {
-                each.setStatus(LabStatus.COMPLETED);
+                each.setStatus(LabStatus.PENDING);
                 break;
             }
         }

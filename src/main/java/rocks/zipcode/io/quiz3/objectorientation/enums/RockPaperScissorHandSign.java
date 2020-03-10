@@ -1,46 +1,35 @@
 package rocks.zipcode.io.quiz3.objectorientation.enums;
 
-import java.util.Scanner;
-
 /**
  * @author leon on 09/12/2018.
  */
 public enum RockPaperScissorHandSign {
-    ROCK,
-    PAPER,
-    SCISSOR;
+    ROCK, PAPER, SCISSOR;
 
 
     public RockPaperScissorHandSign getWinner() {
-        if (PAPER.equals(ROCK)) {
-            return ROCK;
+        switch (this) {
+            case ROCK:
+                return PAPER;
+            case SCISSOR:
+                return ROCK;
+            case PAPER:
+                return SCISSOR;
         }
-        if (SCISSOR.equals(PAPER)) {
-
-            return SCISSOR;
-        }
-        if (SCISSOR.equals(ROCK)) {
-
-            return ROCK;
-
-
-        }
-        return SCISSOR;
+        return null;
     }
 
 
     public RockPaperScissorHandSign getLoser() {
-        if (SCISSOR.equals(ROCK)) {
-            return SCISSOR;
+        switch (this) {
+            case PAPER:
+                return ROCK;
+            case ROCK:
+                return SCISSOR;
+            case SCISSOR:
+                return PAPER;
         }
-        if (ROCK.equals(PAPER)) {
-            return ROCK;
-        }
-        if (PAPER.equals(SCISSOR)) {
-            return PAPER;
-
-        }
-        return PAPER;
+        return null;
     }
 }
 

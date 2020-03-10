@@ -49,7 +49,4 @@ public class CompareAssortedArrays {
         
         Assert.assertTrue(SquareArrayAnalyzer.compare(array1, array2));
     }
-    
-    
-
 }
